@@ -1,0 +1,333 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .resume {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .img img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            margin-left: 3.5rem;
+            margin-top: 2rem;
+        }
+
+        .clr {
+            background: #243B55;
+            width: 17rem;
+            flex-shrink: 0;
+            min-height: 100vh;
+        }
+
+        .right {
+            flex: 1;
+            min-width: 0;
+            background: #f8f9fa;
+            padding: 45px 55px;
+            color: #243044;
+        }
+
+        .contact h4,
+        .skills h4,
+        .lang h4,
+        .int h4{
+            margin-left: 1.8rem;
+            color: #fff;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            letter-spacing: 0.1rem;
+        }
+
+        .contact h4 span, 
+        .skills h4 span,
+        .lang h4 span,
+        .int h4 span{
+            display: inline-block;
+            width: 4rem;
+            height: 0.36rem;
+            background-color: #4A90C2;
+            margin-left: 0.6rem;
+            vertical-align: middle;
+            border-radius: 10px;
+        }
+
+        .email, 
+        .phone, 
+        .place,
+        .linkedin,
+        .github{
+            margin-left: 1.8rem;
+            margin-top: 0.65rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .email img, 
+        .phone img, 
+        .place img,
+        .linkedin img,
+        .github img {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+        }
+
+        .linkedin h1{
+            font-size: 0.71rem;
+            color: #fff;
+        }
+
+        .email h1, 
+        .phone h1, 
+        .place h1,
+        .github h1{
+            font-size: 0.78rem;
+            color: #fff;
+        }
+        .skills h1{
+            margin-left: 1.8rem;
+            margin-top: 0.65rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .skills h2{
+            margin-left: 1.8rem;
+            margin-top: 0.65rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.78rem;
+            color: #fff;
+        }
+
+        .lang h1{
+            margin-left: 1.8rem;
+            margin-top: 0.65rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .int h1{
+             margin-left: 1.8rem;
+            margin-top: 0.65rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .right {
+            flex: 1;
+
+            background: #f8f9fa;
+
+            padding: 45px 55px;
+
+            color: #243044;
+        }
+
+
+.intro {
+    border-bottom: 1px solid #cfd4da;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 25px;
+}
+
+.intro h1 {
+    font-size: 42px;
+
+    letter-spacing: 3px;
+
+    color: #243B55;
+
+    margin-bottom: 5px;
+}
+
+.intro h2 {
+    font-size: 18px;
+
+    color: #3d6094;
+
+    margin-bottom: 12px;
+}
+
+.blue-line {
+    width: 70px;
+
+    height: 4px;
+
+    background: #2F5E9E;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+}
+
+.intro p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    max-width: 850px;
+}
+
+.resume-section {
+    border-bottom: 1px solid #cfd4da;
+
+    padding-bottom: 22px;
+
+    margin-bottom: 22px;
+}
+
+.resume-section h3,
+.small-section h3 {
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+    color: #243B55;
+
+    margin-bottom: 18px;
+}
+
+.resume-item,
+.project {
+    margin-left: 25px;
+
+    margin-bottom: 18px;
+}
+
+.item-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+.item-top h4 {
+    font-size: 15px;
+
+    color: #27364b;
+}
+
+.item-top span {
+    font-size: 13px;
+
+    color: #3d6094;
+}
+
+.date {
+    font-size: 13px;
+
+    color: #555;
+
+    white-space: nowrap;
+}
+
+.resume-item ul,
+.project ul {
+    padding-left: 18px;
+
+    margin-top: 8px;
+}
+
+.resume-item li,
+.project li {
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-bottom: 3px;
+}
+
+
+.project {
+    padding-bottom: 15px;
+
+    border-bottom: 1px dashed #cfd4da;
+}
+
+
+
+.bottom-sections {
+    display: flex;
+
+    gap: 35px;
+
+    border-bottom: 1px solid #cfd4da;
+
+    padding-bottom: 20px;
+
+    margin-bottom: 22px;
+}
+
+.small-section {
+    width: 50%;
+}
+
+.small-section ul {
+    padding-left: 18px;
+}
+
+.small-section li {
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+
+
+.activity-container {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.activity-container div {
+    flex: 1;
+}
+
+.activity-container h4 {
+    color: #2F5E9E;
+
+    margin-bottom: 5px;
+}
+
+.activity-container p {
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-bottom: 4px;
+}

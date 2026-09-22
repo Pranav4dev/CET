@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technology</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(0, 0, 2);
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: #000000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 16px;
+        }
+
+        nav {
+            background-color: #000000;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #6d7072;
+        }
+
+        main {
+            width: 85%;
+            margin: auto;
+        }
+
+        section {
+            padding: 30px 10px;
+            border-bottom: 1px solid white;
+        }
+
+        h2 {
+            color: #b8b6be;
+            font-size: 28px;
+        }
+
+        h3 {
+            color:#b8b6be;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        ul {
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Assignment 2</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#client-server">Client/Server</a>
+        <a href="#components">Components</a>
+        <a href="#content">Web Content</a>
+        <a href="#http">HTTP</a>
+        <a href="#dynamic">Dynamic Pages</a>
+        <a href="#application-server">Application Servers</a>
+        <a href="#security">Web Security</a>
+    </nav>
+
+    <main>
+
+      
+        <section id="client-server">
+            <h2>Client/Server</h2>
+
+            <h3>Definition of Client</h3>
+            <p>
+                A client is a computer, device, or software application that
+                requests services or resources from a server through a network.
+                For example, a web browser acts as a client when it requests
+                information from a web server. The client sends a request and
+                receives the required data or service from the server.
+            </p>
+
+            <h3>Definition of Server</h3>
+            <p>
+                A server is a computer or software system that provides services,
+                resources, or data to clients over a network. It receives requests
+                from clients, processes them, and sends an appropriate response.
+                Web servers, database servers, file servers, and mail servers are
+                common examples of servers.
+            </p>
+        </section>
+
+       
+        <section id="components">
+            <h2>Components of Web Application</h2>
+
+            <h3>View Layer</h3>
+            <p>
+                The View Layer is the part of a web application that users
+                directly interact with. It is responsible for displaying
+                information and collecting user input. HTML, CSS, and JavaScript
+                are commonly used to create the user interface.
+            </p>
+
+            <h3>Business Layer</h3>
+            <p>
+                The Business Layer contains the main logic and rules of the
+                application. It processes user requests and decides how the
+                application should respond. It acts as a connection between the
+                View Layer and the Data Access Layer.
+            </p>
+
+            <h3>Data Access Layer</h3>
+            <p>
+                The Data Access Layer is responsible for communicating with
+                databases and managing data. It performs operations such as
+                storing, retrieving, updating, and deleting information from
+                a database.
+            </p>
+        </section>
+
+       
+        <section id="content">
+            <h2>Types of Web Content</h2>
+
+            <h3>Text</h3>
+            <p>
+                Text is one of the most common types of content on websites.
+                It is used for headings, paragraphs, articles, menus, and other
+                forms of written information.
+            </p>
+
+            <h3>Images</h3>
+            <p>
+                Images are used to make websites more attractive and to present
+                information visually. Photographs, icons, illustrations, and
+                diagrams are common examples.
+            </p>
+
+            <h3>Audio</h3>
+            <p>
+                Audio content includes music, podcasts, voice recordings, and
+                sound effects. It can be used to provide additional information
+                or improve the user experience.
+            </p>
+
+            <h3>Video</h3>
+            <p>
+                Videos combine moving images and sound to present information.
+                They are commonly used for tutorials, advertisements,
+                entertainment, and educational content.
+            </p>
+
+            <h3>Animation</h3>
+            <p>
+                Animation creates the appearance of movement by displaying
+                changing images or elements. It can be used for visual effects,
+                interactive content, advertisements, and website interfaces.
+            </p>
+        </section>
+
+       
+        <section id="http">
+            <h2>HTTP and HTTP Request</h2>
+
+            <h3>Definition of HTTP</h3>
+            <p>
+                HTTP stands for HyperText Transfer Protocol. It is a
+                communication protocol used to transfer information between a
+                client and a web server. HTTP forms the basic communication
+                system used by the World Wide Web.
+            </p>
+
+            <h3>HTTP Request and Response</h3>
+            <p>
+                An HTTP request is a message sent by a client to a server asking
+                for a particular resource or service. The server processes the
+                request and sends an HTTP response containing the requested
+                information or an appropriate status message.
+            </p>
+
+            <h3>Working of HTTP Communication</h3>
+            <p>
+                HTTP communication generally begins when a client sends a
+                request to a web server. The server receives and processes the
+                request and then sends a response back to the client. The browser
+                receives the response and displays the requested webpage or
+                resource to the user.
+            </p>
+        </section>
+
+     
+        <section id="dynamic">
+            <h2>Dynamic Web Pages</h2>
+
+            <h3>Definition</h3>
+            <p>
+                A dynamic web page is a webpage whose content can change
+                according to user interaction, database information, time, or
+                other conditions. Unlike a static webpage, its content can be
+                generated or modified when the page is requested.
+            </p>
+
+            <h3>Characteristics</h3>
+            <p>
+                Dynamic web pages are interactive, database-driven, and capable
+                of displaying personalized content. They can respond to user
+                input and update information without requiring the entire
+                website to be manually changed.
+            </p>
+
+            <h3>Examples</h3>
+            <p>
+                Examples of dynamic web pages include social media websites,
+                online shopping websites, banking websites, news websites,
+                and online learning platforms.
+            </p>
+        </section>
+
+        <section id="application-server">
+            <h2>Application Servers</h2>
+
+            <h3>Definition</h3>
+            <p>
+                An application server is a software platform that provides an
+                environment for running and managing web applications. It
+                handles application logic and allows applications to communicate
+                with databases and other services.
+            </p>
+
+            <h3>Purpose</h3>
+            <p>
+                The main purpose of an application server is to manage the
+                processing of application requests and provide a reliable
+                environment for applications to run. It helps connect the
+                frontend of an application with its backend services and
+                databases.
+            </p>
+
+            <h3>Major Services</h3>
+            <p>
+                Major services provided by application servers include security,
+                database connectivity, transaction management, session
+                management, and communication between different application
+                components.
+            </p>
+        </section>
+
+        <section id="security">
+            <h2>Web Security</h2>
+
+            <h3>Definition</h3>
+            <p>
+                Web security refers to the methods and practices used to protect
+                websites, web applications, servers, and users from cyber
+                threats. It helps prevent unauthorized access, data theft, and
+                other security attacks.
+            </p>
+
+            <h3>Importance</h3>
+            <p>
+                Web security is important because websites often handle
+                sensitive information such as usernames, passwords, personal
+                information, and financial data. Strong security helps protect
+                this information and maintains user trust.
+            </p>
+
+            <h3>Basic Security Measures</h3>
+            <p>
+                Basic web security measures include using HTTPS, strong
+                passwords, authentication, access control, input validation,
+                secure database practices, regular software updates, and
+                protection against common attacks such as SQL injection and
+                cross-site scripting.
+            </p>
+        </section>
+
+    </main>
+
+</body>
+</html>
