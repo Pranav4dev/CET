@@ -20,6 +20,6 @@ while(1):
       print("Output: ", a/b)
     case 5:
       print("Exiting.....")
-      break;
+      break
     case _:
       print("Enter a valid option!!!")
