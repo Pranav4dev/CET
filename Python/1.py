@@ -11,6 +11,6 @@ while(1):
       print("Perimeter: ", 2*3.14*r)
     case 3:
       print("Exiting.....")
-      break;
+      break
     case _:
       print("Enter a valid option!!!")    
