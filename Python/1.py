@@ -10,7 +10,7 @@ while(1):
       r = int(input("Enter value of radius: "))
       print("Perimeter: ", 2*3.14*r)
     case 3:
-      print("Exiting.....")
-      break;
+      print("Exiting..........")
+      break
     case _:
-      print("Enter a valid option!!!")    
+      print("Enter a valid option!!!")
