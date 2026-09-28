@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GameVerse</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #10131a;
+            height: 100vh;
+        }
+
+       
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+
+
+        .menu {
+            width: 22%;
+            min-width: 220px;
+            background-color: #171b26;
+            padding: 35px 20px;
+            border-right: 2px solid #292f3d;
+        }
+
+        .menu h2 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        .menu h2 span {
+            color: #7c4dff;
+        }
+
+        .menu a {
+            display: block;
+            background-color: #222837;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+            border-radius: 8px;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #7c4dff;
+            transform: translateX(5px);
+        }
+
+
+        /* CONTENT FRAME */
+
+        .content {
+            width: 78%;
+            height: 100vh;
+            border: none;
+            background-color: #10131a;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+
+        <div class="menu">
+
+            <h2>GAME<span>VERSE</span></h2>
+
+            <a href="#home"
+               target="contentFrame"
+               onclick="loadPage('home'); return false;">
+                🏠 Home
+            </a>
+
+            <a href="#games"
+               target="contentFrame"
+               onclick="loadPage('games'); return false;">
+                🎮 Games
+            </a>
+
+            <a href="#tournaments"
+               target="contentFrame"
+               onclick="loadPage('tournaments'); return false;">
+                🏆 Tournaments
+            </a>
+
+            <a href="#gallery"
+               target="contentFrame"
+               onclick="loadPage('gallery'); return false;">
+                🖼️ Gallery
+            </a>
+
+            <a href="#contact"
+               target="contentFrame"
+               onclick="loadPage('contact'); return false;">
+                📞 Contact
+            </a>
+
+        </div>
+
+
+        
+
+        <iframe
+            class="content"
+            name="contentFrame"
+            id="contentFrame">
+        </iframe>
+
+    </div>
+
+
+    <script>
+
+        
+
+        const pages = {
+
+
+
+            home: `
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+
+                    <style>
+
+                        body {
+                            font-family: Arial;
+                            background: #10131a;
+                            color: white;
+                            padding: 55px;
+                        }
+
+                        h1 {
+                            color: #ffffff;
+                            font-size: 38px;
+                            margin-bottom: 20px;
+                        }
+
+                        h1 span {
+                            color: #7c4dff;
+                        }
+
+                        p {
+                            font-size: 18px;
+                            line-height: 1.7;
+                            color: #c7cbd6;
+                        }
+
+                        .welcome {
+                            background: #191e2a;
+                            padding: 30px;
+                            border-left: 5px solid #7c4dff;
+                            border-radius: 8px;
+                            margin-top: 30px;
+                        }
+
+                        .welcome h2 {
+                            margin-bottom: 15px;
+                        }
+
+                    </style>
+
+                </head>
+
+                <body>
+
+                    <h1>Welcome to <span>GameVerse</span></h1>
+
+                    <p>
+                        Your ultimate destination for gaming.
+                    </p>
+
+                    <div class="welcome">
+
+                        <h2>Level Up Your Gaming</h2>
+
+                        <p>
+                            Explore popular games, tournaments and
+                            gaming content all in one place.
+                        </p>
+
+                        <br>
+
+                        <p>
+                            Select <b>Games</b> from the menu to
+                            explore our collection.
+                        </p>
+
+                    </div>
+
+                </body>
+
+                </html>
+            `,
+
+
+
+            games: `
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+
+                    <style>
+
+                        body {
+                            font-family: Arial;
+                            background: #10131a;
+                            color: white;
+                            padding: 40px;
+                        }
+
+                        h1 {
+                            font-size: 35px;
+                            margin-bottom: 30px;
+                        }
+
+                        h1 span {
+                            color: #7c4dff;
+                        }
+
+                        .games {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            gap: 20px;
+                        }
+
+                        .game {
+                            background: #191e2a;
+                            padding: 25px;
+                            border-radius: 10px;
+                            border: 1px solid #292f3d;
+                            transition: 0.3s;
+                        }
+
+                        .game:hover {
+                            transform: translateY(-5px);
+                            border-color: #7c4dff;
+                        }
+
+                        .game h2 {
+                            color: #ffffff;
+                            margin-bottom: 10px;
+                        }
+
+                        .game p {
+                            color: #aeb4c2;
+                            line-height: 1.5;
+                        }
+
+                        .genre {
+                            color: #7c4dff;
+                            font-size: 14px;
+                            margin-bottom: 12px;
+                        }
+
+                    </style>
+
+                </head>
+
+                <body>
+
+                    <h1>Featured <span>Games</span></h1>
+
+                    <div class="games">
+
+                        <div class="game">
+                            <h2>Valorant</h2>
+                            <div class="genre">Tactical FPS</div>
+                            <p>
+                                A competitive 5v5 tactical shooter
+                                featuring unique agents and abilities.
+                            </p>
+                        </div>
+
+
+                        <div class="game">
+                            <h2>League of Legends</h2>
+                            <div class="genre">MOBA</div>
+                            <p>
+                                A competitive multiplayer game
+                                focused on strategy and teamwork.
+                            </p>
+                        </div>
+
+
+                        <div class="game">
+                            <h2>Dota 2</h2>
+                            <div class="genre">MOBA</div>
+                            <p>
+                                A strategic 5v5 battle arena with
+                                hundreds of unique heroes.
+                            </p>
+                        </div>
+
+
+                        <div class="game">
+                            <h2>PUBG PC</h2>
+                            <div class="genre">Battle Royale</div>
+                            <p>
+                                Fight to survive and become the
+                                last player standing.
+                            </p>
+                        </div>
+
+
+                        <div class="game">
+                            <h2>Battlefield V</h2>
+                            <div class="genre">First Person Shooter</div>
+                            <p>
+                                Experience large-scale battles
+                                inspired by World War II.
+                            </p>
+                        </div>
+
+
+                        <div class="game">
+                            <h2>GTA V</h2>
+                            <div class="genre">Open World</div>
+                            <p>
+                                Explore a massive open world filled
+                                with missions, vehicles and activities.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </body>
+
+                </html>
+            `,
+
+
+
+            tournaments: `
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+
+                    <style>
+
+                        body {
+                            font-family: Arial;
+                            background: #10131a;
+                            color: white;
+                            padding: 50px;
+                        }
+
+                        h1 {
+                            color: #7c4dff;
+                            margin-bottom: 25px;
+                        }
+
+                        .tournament {
+                            background: #191e2a;
+                            padding: 22px;
+                            margin-bottom: 15px;
+                            border-radius: 8px;
+                            border-left: 4px solid #7c4dff;
+                        }
+
+                        .tournament h2 {
+                            margin-bottom: 8px;
+                        }
+
+                        .tournament p {
+                            color: #b8bdc9;
+                        }
+
+                    </style>
+
+                </head>
+
+                <body>
+
+                    <h1>Gaming Tournaments</h1>
+
+                    <div class="tournament">
+
+                        <h2>Valorant Championship</h2>
+
+                        <p>
+                            Competitive 5v5 Valorant tournament.
+                        </p>
+
+                    </div>
+
+
+                    <div class="tournament">
+
+                        <h2>Battle Royale Cup</h2>
+
+                        <p>
+                            PUBG PC survival tournament.
+                        </p>
+
+                    </div>
+
+
+                    <div class="tournament">
+
+                        <h2>MOBA Challenge</h2>
+
+                        <p>
+                            League of Legends and Dota 2
+                            competitive event.
+                        </p>
+
+                    </div>
+
+                </body>
+
+                </html>
+            `,
+
+
+            gallery: `
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+
+                    <style>
+
+                        body {
+                            font-family: Arial;
+                            background: #10131a;
+                            color: white;
+                            padding: 45px;
+                        }
+
+                        h1 {
+                            margin-bottom: 30px;
+                        }
+
+                        h1 span {
+                            color: #7c4dff;
+                        }
+
+                        .gallery {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 18px;
+                        }
+
+                        .photo {
+                            height: 150px;
+                            background: #191e2a;
+                            border: 1px solid #292f3d;
+                            border-radius: 10px;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            font-size: 20px;
+                            color: #ffffff;
+                        }
+
+                        .photo:hover {
+                            border-color: #7c4dff;
+                        }
+
+                    </style>
+
+                </head>
+
+                <body>
+
+                    <h1>Gaming <span>Gallery</span></h1>
+
+                    <div class="gallery">
+
+                        <div class="photo">
+                            Valorant
+                        </div>
+
+                        <div class="photo">
+                            League of Legends
+                        </div>
+
+                        <div class="photo">
+                            Dota 2
+                        </div>
+
+                        <div class="photo">
+                            PUBG PC
+                        </div>
+
+                        <div class="photo">
+                            Battlefield V
+                        </div>
+
+                        <div class="photo">
+                            GTA V
+                        </div>
+
+                    </div>
+
+                </body>
+
+                </html>
+            `,
+
+
+
+            contact: `
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+
+                    <style>
+
+                        body {
+                            font-family: Arial;
+                            background: #10131a;
+                            color: white;
+                            padding: 55px;
+                        }
+
+                        h1 {
+                            color: #7c4dff;
+                            margin-bottom: 25px;
+                        }
+
+                        .contact {
+                            background: #191e2a;
+                            padding: 30px;
+                            border-radius: 10px;
+                            border-left: 4px solid #7c4dff;
+                            max-width: 600px;
+                        }
+
+                        .contact p {
+                            font-size: 18px;
+                            line-height: 2;
+                            color: #c7cbd6;
+                        }
+
+                        b {
+                            color: white;
+                        }
+
+                    </style>
+
+                </head>
+
+                <body>
+
+                    <h1>Contact GameVerse</h1>
+
+                    <div class="contact">
+
+                        <p>
+                            <b>Email:</b>
+                            gameverse@gmail.com
+                        </p>
+
+                        <p>
+                            <b>Phone:</b>
+                            +91 98765 43210
+                        </p>
+
+                        <p>
+                            <b>Location:</b>
+                            Kerala, India
+                        </p>
+
+                    </div>
+
+                </body>
+
+                </html>
+            `
+
+        };
+
+
+    
+
+        function loadPage(page) {
+
+            const iframe =
+                document.getElementById("contentFrame");
+
+            iframe.srcdoc = pages[page];
+
+        }
+
+
+
+        loadPage("home");
+
+    </script>
+
+</body>
+
+</html>

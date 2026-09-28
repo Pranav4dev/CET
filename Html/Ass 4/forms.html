@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 70%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            background-color: #333;
+            color: white;
+            padding: 8px;
+            font-size: 18px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        td:first-child {
+            width: 35%;
+            font-weight: bold;
+            background-color: #f5f5f5;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+        }
+
+        input[type="file"] {
+            padding: 5px;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 25px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+        }
+
+        input[type="reset"] {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Job Application Form</h1>
+
+    <form>
+
+        <h2>Personal Information</h2>
+
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" name="name" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Age</td>
+                <td>
+                    <input type="number" name="age" min="18" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="password" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Retype Password</td>
+                <td>
+                    <input type="password" name="repassword" required>
+                </td>
+            </tr>
+        </table>
+
+
+
+        <h2>Security Information</h2>
+
+        <table>
+            <tr>
+                <td>Security Question</td>
+                <td>
+                    <select name="security_question">
+                        <option value="">-- Select Question --</option>
+                        <option>What is your pet's name?</option>
+                        <option>What is your mother's name?</option>
+                        <option>What is your favourite color?</option>
+                        <option>What is your birthplace?</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Security Answer</td>
+                <td>
+                    <input type="text" name="security_answer">
+                </td>
+            </tr>
+        </table>
+
+
+
+        <h2>Contact Information</h2>
+
+        <table>
+            <tr>
+                <td>Email ID</td>
+                <td>
+                    <input type="email" name="email" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Home Phone Number</td>
+                <td>
+                    <input type="tel" name="home_phone">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Office Phone Number</td>
+                <td>
+                    <input type="tel" name="office_phone">
+                </td>
+            </tr>
+        </table>
+
+
+
+        <h2>Languages Known</h2>
+
+        <table>
+            <tr>
+                <td>Languages</td>
+                <td>
+                    <input type="checkbox" name="language" value="Malayalam">
+                    Malayalam
+
+                    <br>
+
+                    <input type="checkbox" name="language" value="English">
+                    English
+
+                    <br>
+
+                    <input type="checkbox" name="language" value="Hindi">
+                    Hindi
+                </td>
+            </tr>
+        </table>
+
+
+      
+        <h2>Application Documents</h2>
+
+        <table>
+            <tr>
+                <td>Upload CV</td>
+                <td>
+                    <input type="file" name="cv">
+                </td>
+            </tr>
+        </table>
+
+
+       
+        <div class="buttons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
