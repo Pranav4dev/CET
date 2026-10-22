@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tab Switching Demo</title>
+<style>
+  body{margin:0;background:#EDF1F6;color:#14213D;font:16px/1.5 system-ui,sans-serif}
+  .wrap{max-width:640px;margin:0 auto;padding:28px 18px}
+  .tabs{display:flex;gap:6px;border-bottom:2px solid #CBD5E3;margin-bottom:16px}
+  .tab{border:0;background:none;color:#58657E;font:500 16px system-ui,sans-serif;
+       padding:10px 18px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+
+  /* Active tab gets the blue underline */
+  .tab[aria-selected="true"]{color:#14213D;border-bottom-color:#2748D8}
+
+  .panel{background:#fff;border:1px solid #CBD5E3;border-radius:10px;padding:18px}
+
+  /* Hidden panel is removed from the page */
+  .panel[hidden]{display:none}
+
+  .state{margin-top:22px;background:#F3F6FB;border:1px dashed #CBD5E3;
+         border-radius:8px;padding:12px 14px;font:14px/1.7 monospace}
+  .state b{color:#2748D8}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Tab switching demo</h1>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="t-str"  aria-selected="true"  aria-controls="p-str">String functions</button>
+    <button class="tab" role="tab" id="t-math" aria-selected="false" aria-controls="p-math">Math functions</button>
+  </div>
+
+  <section class="panel" id="p-str" role="tabpanel" aria-labelledby="t-str">
+    <h2>String panel</h2>
+    <p>This is where the string function cards would be.</p>
+  </section>
+
+  <section class="panel" id="p-math" role="tabpanel" aria-labelledby="t-math" hidden>
+    <h2>Math panel</h2>
+    <p>This is where the math function cards would be.</p>
+  </section>
+
+  <div class="state">
+    <strong>Live attribute values</strong>
+    <div id="log"></div>
+  </div>
+</div>
+
+<script>
+  var $ = function(id){ return document.getElementById(id); };
+
+  // Each pair: [tab button id, panel id]
+  var tabs = [['t-str','p-str'], ['t-math','p-math']];
+
+  // Shows the current attribute values in the box at the bottom
+  function updateLog(){
+    $('log').innerHTML = tabs.map(function(x){
+      return x[0] + ' aria-selected = <b>' + $(x[0]).getAttribute('aria-selected') + '</b><br>' +
+             x[1] + ' hidden = <b>' + $(x[1]).hidden + '</b>';
+    }).join('<br>');
+  }
+
+  // Add a click listener to each tab button
+  tabs.forEach(function(p){
+    $(p[0]).addEventListener('click', function(){
+      tabs.forEach(function(x){
+        var on = x[0] === p[0];                      // is this the clicked pair?
+        $(x[0]).setAttribute('aria-selected', on);   // mark tab selected / not selected
+        $(x[1]).hidden = !on;                        // show / hide its panel
+      });
+      updateLog();
+    });
+  });
+  // show the starting values on page load
+</script>
+</body>
+</html>

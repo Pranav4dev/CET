@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 24px;
+            background-color: #d5e3f1;
+            font-family: Arial, sans-serif;
+            color: #172554;
+        }
+        #all{
+            max-width: 62.5rem;
+            margin: 6rem auto;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid #94989c;
+        }
+        #calender{
+            background-color: #d5dff7;
+            max-width: 100%;
+            padding: 1rem;
+        }
+
+        #calender h1 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+        }
+
+        #calender h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #475569;
+        }
+
+        input {
+            padding: 1%;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+        }  
+        
+        #cal_form, #now{
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: normal;
+        }
+
+        table {
+            margin: 0 2% 1%;
+            width: calc(100% - 4%);
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th, td {
+            border: 1px solid #7c8188;
+            padding: 2% 3%;
+            text-align: center;
+        }
+
+        th {
+            background-color: #d5daeb;
+        }
+
+        td {
+            height: 32px;
+        }
+
+
+    #year {
+        width: 180px;
+    }
+
+
+    #month {
+        width: 100px;
+    }
+
+
+    #cal_form button {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        background-color: #455592;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+    </style>
+
+</head>
+<body>
+    <div id="all">
+        <div id="calender">
+            <h1>Calender</h1>
+            <h3>Pick a Year and Month to view calender</h3>
+        </div>
+        <form id="cal_form">
+            <label for="year">Year:</label>
+            <input type="number" id="year" required>
+
+            <label for="month">Month:</label>
+            <input type="number" id="month" min="1" max="12" required>
+
+            <button type="submit">View Calendar</button>
+        </form>
+        <br>
+        <div id="now"></div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="Num"></tbody>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    let months = [
+        "January", "February", "March", "April",
+        "May", "June", "July", "August",
+        "September", "October", "November", "December"
+    ];
+    const form = document.getElementById("cal_form")
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault()
+        d()
+    })
+    let current = new Date();
+    let month =parseInt(current.getMonth());
+    let year = current.getFullYear();
+    let n = new Date(year,month);
+    let weekday = current.getDay();
+    let totalDays = new Date(year, month + 1, 0).getDate();
+    let mn = months[month]
+    document.getElementById("now").innerHTML=`
+        <h2>${mn} ${year}</h2>
+    `;
+    
+    let html = "<tr>";
+        for(let i = 0; i<weekday;i++){
+            html += "<td></td>";
+        }
+        for(let day = 1; day <= totalDays; day++){
+            html += "<td>" + day + "</td>";
+            if ((weekday + day) % 7 === 0 && day !== totalDays) {
+                html += "</tr><tr>";
+            }
+        }
+        for (let i = (weekday + totalDays) % 7; i < 7 && i !== 0; i++) {
+            html += "<td></td>";
+        }
+        html += "</tr>";
+        document.getElementById("Num").innerHTML=html;
+        function d(){
+            let year = document.getElementById("year")
+            let y = year.value
+            let month = document.getElementById("month")
+            let m = String(parseInt(month.value)-1)
+            let now = new Date(y,m)
+            let mon = parseInt(m)
+            let weekday = parseInt(now.getDay())
+            let total_day = new Date(y, m+1, 0).getDate();
+            let mn = months[parseInt(mon)]
+
+            let yr = now.getFullYear()
+            document.getElementById("now").innerHTML=`
+            <h2>${mn} ${yr}</h2>
+            `;
+            console.log(m)
+    
+            
+            let html = "<tr>";
+                for(let i = 0; i<weekday; i++){
+                    html += "<td></td>";
+                }
+                
+                for(let day = 1; day <= total_day; day++){
+                    html += "<td>" + day + "</td>";
+                    if ((weekday + day) % 7 === 0 && day !== total_day) {
+                        html += "</tr><tr>";
+                        }
+                    }
+                    for (let i = (weekday + totalDays) % 7; i < 7 && i !== 0; i++) {
+                        html += "<td></td>";
+                    }
+                    html += "</tr>";
+                    document.getElementById("Num").innerHTML=html;
+            }
+</script>
