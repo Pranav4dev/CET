@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 14px 28px;
+            border: 2px solid currentColor;
+            border-radius: 8px;
+            background: transparent;
+            color: inherit;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div cl></div>
+    <button id="btn" type="button">Change Background</button>
+
+    <script>
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+
+            document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+            const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+            if (brightness > 128) {
+                console.log('Light color');
+                document.body.style.color = 'black';
+            } else {
+                console.log('Dark color');
+                document.body.style.color = 'white';
+            }
+        });
+    </script>
+</body>
+</html>
